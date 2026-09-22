@@ -9,8 +9,11 @@ let user;
 // Refererar till inputen "pwd" i html-koden
 let pwd;
 
-// Refererar till p-taggen där, senare, infomeddelanden skriv ut i
+// Refererar till p-taggen utanför formuläret där, senare, infomeddelanden skriv ut i
 let info;
+
+// Refererar till p-taggen inuti formuläret där, senare, infomeddelande skrivs ut i 
+let infoForm;
 
 // Refererar till formuläret där html-taggarna med id "user", "pwd" och "btn-log-in" ligger i
 let form;
@@ -26,6 +29,7 @@ function init(){
     user = document.getElementById("user");
     pwd = document.getElementById("pwd");
     info = document.getElementById("info-log-in");
+    infoForm = document.getElementById("info-log-in-form");
 
     const btnLogOut = document.getElementById("btn-log-out");
     logOut = btnLogOut;
@@ -61,13 +65,13 @@ function logInCheck(){
             return logInFunction();
         }
         else{
-            info.textContent = `Felaktiga inloggningsuppgifter`;
+            infoForm.textContent = `Felaktiga inloggningsuppgifter`;
 
             return;
         }
     }
     else{
-        info.textContent = `Felaktiga inloggningsuppgifter`;
+        infoForm.textContent = `Felaktiga inloggningsuppgifter`;
 
         return;
     }
@@ -89,7 +93,7 @@ function logInFunction(){
 
 // Synliggör formuläret och döljer loffa ut-knappen
 // Tar bort namnet ur localStorage så att användaren inte loggas in automatisk igen när sidan uppdateras
-// Tömmer p-taggen för meddelande och ersätter med en tom sträng
+// Tömmer p-taggarna för meddelande och ersätter med en tom sträng
 function logOutFunction(){
     form.hidden = false;
     logOut.hidden = true;
@@ -97,6 +101,7 @@ function logOutFunction(){
     localStorage.removeItem("user");
 
     info.textContent = "";
+    infoForm.textContent = "";
 
     return;
 }
