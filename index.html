@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
     <title>Logga in</title>
 </head>
 <body>
@@ -14,7 +17,16 @@
         </h1>
     </header>
     <main>
-        <img src="" alt="">
+        <div id="inloggning">
+            <p id="info-log-in"></p>
+            <form id="inloggning-form">
+                <label for="user">Användarnamn:</label>
+                <input type="text" name="user" id="user">
+                <label for="pwd">Lösenord:</label>
+                <input type="password" name="pwd" id="pwd">
+                <input type="submit" value="Logga in" id="btn1">
+            </form>
+        </div>
     </main>
     <footer>
         <p>
