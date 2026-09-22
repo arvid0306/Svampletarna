@@ -25,18 +25,20 @@ function logIn(){
 
         if(pwd.value === pwdKalle){
             console.log("rätt pwd");
-
+            info.textContent = `Välkommen ${user.value}, du är nu inloggad!`;
 
             return;
         }
         else{
             console.log("fel pwd");
+            info.textContent = `Felaktiga inloggningsuppgifter`;
 
             return;
         }
     }
     else{
         console.log("fel user");
+        info.textContent = `Felaktiga inloggningsuppgifter`;
 
         return;
     }
